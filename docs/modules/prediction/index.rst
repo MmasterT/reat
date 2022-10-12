@@ -110,7 +110,7 @@ Configurable computational resources available
                 mem_gb -> Float?
                 preemptible_tries -> Int?
                 }? (optional)",
-  "ei_prediction.augustus.resources": " {
+  "ei_prediction.augustus_resources": " {
                  cpu_cores -> Int
                 max_retries -> Int?
                 boot_disk_gb -> Int?
@@ -120,7 +120,7 @@ Configurable computational resources available
                 mem_gb -> Float?
                 preemptible_tries -> Int?
                 }? (optional)",
-  "ei_prediction.AugustusAbinitio.augustus.resources": " {
+  "ei_prediction.AugustusAbinitio.augustus_resources": " {
                  cpu_cores -> Int
                 max_retries -> Int?
                 boot_disk_gb -> Int?
