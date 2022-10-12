@@ -678,13 +678,13 @@ Annotation of the reference, this file will be used as the base for the new anno
     homology_ap.add_argument(
         "--mikado_config",
         type=FileType("r"),
-        help="Base configuration for Mikado consolidation stage.",
+        help="Base configuration for Mikado consolidation stage. See mikado documentation for more information.",
         required=True,
     )
     homology_ap.add_argument(
         "--mikado_scoring",
         type=FileType("r"),
-        help="Scoring file for Mikado pick at consolidation stage.",
+        help="Scoring file for Mikado pick at consolidation stage. See mikado documentation for more information.",
         required=True,
     )
     homology_ap.add_argument(
@@ -753,7 +753,7 @@ Annotation of the reference, this file will be used as the base for the new anno
             "aa_len",
             "splicing",
         ],
-        help="Filter alignment results by the filter types specified",
+        help="Filter the alignment results by the filter types specified",
         nargs="+",
         default=["none"],
     )
@@ -824,7 +824,8 @@ Annotation of the reference, this file will be used as the base for the new anno
         type=str,
         required=True,
         help="Name of the species to train models for, if it does not exist in the augustus "
-        "config path it will be created.",
+        "config path it will be created. Check first if the species exist in the agustus config directory"
+        "previously trained models are faster and more accurate",
     )
     prediction_ap.add_argument(
         "--codon_table", type=int, default=1, help="NCBI based codon translation table"
@@ -854,7 +855,7 @@ Annotation of the reference, this file will be used as the base for the new anno
         help="Models derived from protein alignments",
     )
     prediction_ap.add_argument(
-        "--introns", type=FileType("r"), help="Introns to be used as hints for Augustus"
+        "--introns", type=FileType("r"), help="Introns to be used as hints for Augustus. GFF3 Format."
     )
     prediction_ap.add_argument(
         "--firststrand_expression",
