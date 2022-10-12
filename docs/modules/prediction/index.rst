@@ -1,14 +1,14 @@
 Prediction Workflow
 ========================
 
-The intention of the prediction workflow is to use a variety of transcript evidence, from short reads and long reads based gene assemblies, protein alignments, homology alignments and other evidence such as expression, introns and repeats to generate gene predictions ab initio and evidence based gene predictions.
+The intention of the prediction workflow is to use a variety of transcript evidence, from short reads and long reads based gene assemblies, protein alignments, homology alignments and other evidence such as expression, introns and repeats to generate gene predictions ab initio and evidence based gene predictions. 
 
 .. highlight:: none
 .. include:: ./prediction_help.txt
   :literal:
 
 
-The prediction module takes as input a genome file along with a set of evidences for annotations over the genome (these should have gene->mrna->{exon,CDS} structure, where CDS is required for protein inputs), these can come from homology proteins or transcript alignments, rna-seq gene models, repeat annotations (these should be of "match" feature type), rna-seq alignments which can provide evidence to the presence/absence of exons. Also, the user should provide a set of proteins to validate against, these proteins are used to score input models, categorize them into Gold, Silver or Bronze and select the best models for training of the ab initio gene predictors.
+The prediction module takes as input a genome file along with a set of evidences for annotations over the genome (these should have gene->mrna->{exon,CDS} structure, where CDS is required for protein inputs), these can come from homology proteins or transcript alignments, rna-seq gene models, repeat annotations (these should be of "match" feature type), rna-seq alignments which can provide evidence to the presence/absence of exons. Also, the user should provide a set of proteins to validate against, these proteins are used to score input models, categorize them into Gold, Silver or Bronze and select the best models for training of the ab initio gene predictors. This pipeline includes several posibles gene predictors: Glimmer, Augustus, SNAP (not tested), and CodingQuarry. 
 
 Multiple sets of input models from homology proteins or transcriptomic sources are aligned to a protein database of the user's choice and the results of these alignments are used to classify and score each input model into Bronze, Silver and Gold. Models from the Gold and Silver category are defined by:
 
@@ -110,7 +110,7 @@ Configurable computational resources available
                 mem_gb -> Float?
                 preemptible_tries -> Int?
                 }? (optional)",
-  "ei_prediction.Augustus.resources": " {
+  "ei_prediction.augustus.resources": " {
                  cpu_cores -> Int
                 max_retries -> Int?
                 boot_disk_gb -> Int?
@@ -120,7 +120,7 @@ Configurable computational resources available
                 mem_gb -> Float?
                 preemptible_tries -> Int?
                 }? (optional)",
-  "ei_prediction.AugustusAbinitio.resources": " {
+  "ei_prediction.AugustusAbinitio.augustus.resources": " {
                  cpu_cores -> Int
                 max_retries -> Int?
                 boot_disk_gb -> Int?
